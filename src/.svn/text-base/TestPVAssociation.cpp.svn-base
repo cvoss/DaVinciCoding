@@ -1,0 +1,167 @@
+// $Id: TestPVAssociation.cpp,v 1.3 2008-10-28 10:55:52 jpalac Exp $
+// Include files 
+
+// from Gaudi
+#include "GaudiKernel/DeclareFactoryEntries.h" 
+
+// DaVinci
+#include "Kernel/IRelatedPV.h"
+// local
+#include "TestPVAssociation.h"
+
+typedef LHCb::Particle::ConstVector::const_iterator p_iter;
+typedef LHCb::RecVertex::Container::const_iterator rv_iter;
+
+//-----------------------------------------------------------------------------
+// Implementation file for class : TestPVAssociation
+//
+// 2006-09-11 : Patrick Koppenburg
+//-----------------------------------------------------------------------------
+
+// Declaration of the Algorithm Factory
+DECLARE_ALGORITHM_FACTORY( TestPVAssociation );
+
+
+//=============================================================================
+// Standard constructor, initializes variables
+//=============================================================================
+TestPVAssociation::TestPVAssociation( const std::string& name,
+                                      ISvcLocator* pSvcLocator)
+  : DVAlgorithm ( name , pSvcLocator )
+  , m_rpv()
+{
+
+}
+//=============================================================================
+// Destructor
+//=============================================================================
+TestPVAssociation::~TestPVAssociation() {} 
+
+//=============================================================================
+// Initialization
+//=============================================================================
+StatusCode TestPVAssociation::initialize() {
+  //=== The following two lines should be commented for DC04 algorithms ! ===
+
+  StatusCode sc = DVAlgorithm::initialize(); 
+  if ( sc.isFailure() ) return sc ;
+  debug() << "==> Initialize" << endmsg;
+
+  m_rpv = tool<IRelatedPV>("RelatedPV",this);  
+
+  return StatusCode::SUCCESS;
+}
+
+//=============================================================================
+// Main execution
+//=============================================================================
+StatusCode TestPVAssociation::execute() {
+
+  debug() << "==> Execute" << endmsg;
+
+  LHCb::Particle::ConstVector psis = desktop()->particles();
+  setFilterPassed(!psis.empty());
+  info() << "Printing association for psis from desktop" << endmsg ;
+  StatusCode sc = printRelated(psis);
+  if (!sc) return sc;
+  LHCb::Particle::ConstVector newPsis = clone(psis);
+  info() << "Associating cloned psis" << endmsg ;
+  sc = associate(newPsis);
+  if (!sc) return sc;
+  info() << "Printing association for cloned psis" << endmsg ;
+  sc = printRelated(newPsis);
+  if (!sc) return sc;
+
+  // here I try to trick the desktop
+  if ( !newPsis.empty()){
+    LHCb::Particle cheat = *(newPsis[0]);
+    cheat.setParticleID(LHCb::ParticleID(511));
+    desktop()->relate(&cheat,*((desktop()->primaryVertices())->begin()),1.);
+  }
+      
+  sc = desktop()->saveTrees(newPsis);
+  return sc ;
+}
+//=============================================================================
+// Do association to PV
+//=============================================================================
+StatusCode TestPVAssociation::associate( const LHCb::Particle::ConstVector& psis) {
+
+  debug() << "==> Associate" << endmsg;
+
+  for ( p_iter p = psis.begin() ; p!=psis.end(); ++p){
+    StatusCode sc = relatePV(*p);
+    if (!sc) return sc;
+  }
+
+  return StatusCode::SUCCESS;
+}
+//=============================================================================
+// print association to PV
+//=============================================================================
+StatusCode TestPVAssociation::printRelated( const LHCb::Particle::ConstVector& psis) {
+
+  debug() << "==> :printRelated" << endmsg;
+  
+  for ( p_iter p = psis.begin() ; p!=psis.end(); ++p){
+
+    const LHCb::VertexBase* pvr = desktop()->relatedVertex(*p);
+    if (NULL!=pvr) info() << "Desktop-related PV is " << pvr->position() << endmsg ;
+    else info() << "No related PV" << endmsg ;
+
+    Particle2Vertex::Range r = desktop()->particle2Vertices(*p);
+    info() << "Size of range is " << r.size() << endmsg ;
+    
+    const LHCb::RecVertex* bpv = dynamic_cast<const LHCb::RecVertex*>(m_rpv->bestPV(*p));
+    if (NULL==bpv) warning() << "No best PV for " << (*p)->particleID().pid() << endmsg ;
+    else info() << "Found best PV at " << bpv->position() << endmsg ;
+  }
+
+  return StatusCode::SUCCESS;
+}
+//=============================================================================
+// best PV
+//=============================================================================
+StatusCode TestPVAssociation::relatePV(const LHCb::Particle* psi){
+  // geom tool does not work yet
+  debug() << "==> relatePV" << endmsg;
+  
+  const LHCb::RecVertex::Container* pvs = desktop()->primaryVertices();
+
+  info() << "Psi is at " << psi->endVertex()->position() << endmsg ;
+  for ( rv_iter pv = pvs->begin() ; pv!=pvs->end() ; ++pv){
+    /* does not work yet
+    double ip, ipe;
+    geomDispCalculator()->calcImpactPar(*psi, *(*pv), ip, ipe);
+    */
+    double ips = (psi->endVertex()->position()-(*pv)->position()).R() ;
+    //    info() << "PV gets IP " << ip << "+/-" << ipe << " -> " << ips << endmsg ;
+    info() << "PV is at " << (*pv)->position() << " -> " << ips << endmsg ;
+    desktop()->relate(psi,*pv,1/ips);    
+  }  
+
+  return StatusCode::SUCCESS ;
+}
+//=============================================================================
+// clone
+//=============================================================================
+LHCb::Particle::ConstVector TestPVAssociation::clone( const LHCb::Particle::ConstVector& psis){
+  
+  LHCb::Particle::ConstVector newPsis;
+  for ( p_iter p = psis.begin() ; p!=psis.end(); ++p){
+    LHCb::Particle* n = (*p)->clone() ;
+    newPsis.push_back(n);
+  };
+  return newPsis; 
+}
+//=============================================================================
+//  Finalize
+//=============================================================================
+StatusCode TestPVAssociation::finalize() {
+
+  debug() << "==> Finalize" << endmsg;
+
+  return DVAlgorithm::finalize(); //=== For DC04, return StatusCode::SUCCESS;
+}
+
+//=============================================================================

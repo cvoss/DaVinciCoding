@@ -1,0 +1,39 @@
+// $Id: TestPVAssociation.h,v 1.1 2006-09-14 18:06:45 pkoppenb Exp $
+#ifndef TESTPVASSOCIATION_H 
+#define TESTPVASSOCIATION_H 1
+
+// Include files
+// from DaVinci, this is a specialized GaudiAlgorithm
+#include "Kernel/DVAlgorithm.h"
+
+
+/** @class TestPVAssociation TestPVAssociation.h
+ *  
+ *  Takes J/psis and checks association to PV
+ *  then clones them and assigns them to a PV and checks it worked
+ *
+ *  @author Patrick Koppenburg
+ *  @date   2006-09-11
+ */
+class IRelatedPV;
+class TestPVAssociation : public DVAlgorithm {
+public: 
+  /// Standard constructor
+  TestPVAssociation( const std::string& name, ISvcLocator* pSvcLocator );
+
+  virtual ~TestPVAssociation( ); ///< Destructor
+
+  virtual StatusCode initialize();    ///< Algorithm initialization
+  virtual StatusCode execute   ();    ///< Algorithm execution
+  virtual StatusCode finalize  ();    ///< Algorithm finalization
+
+protected:
+  StatusCode associate( const LHCb::Particle::ConstVector&); ///< Associate a PV to each psi
+  StatusCode printRelated( const LHCb::Particle::ConstVector&); ///< Print related PV
+  StatusCode relatePV(const LHCb::Particle*) ; ///< relate good PV for psi
+  LHCb::Particle::ConstVector clone( const LHCb::Particle::ConstVector&); ///< Clone Psis
+
+private:
+  IRelatedPV* m_rpv;
+};
+#endif // TESTPVASSOCIATION_H

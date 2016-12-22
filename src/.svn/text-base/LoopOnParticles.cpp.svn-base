@@ -1,0 +1,102 @@
+// $Id: LoopOnParticles.cpp,v 1.9 2008-12-23 11:31:30 pkoppenb Exp $
+// Include files 
+
+// from Gaudi
+#include "GaudiKernel/DeclareFactoryEntries.h"
+
+// from Event 
+#include "Event/RecHeader.h"
+
+// local
+#include "LoopOnParticles.h"
+using namespace LHCb; 
+using namespace Gaudi::Units;
+
+//-----------------------------------------------------------------------------
+// Implementation file for class : LoopOnParticles
+//
+// 2004-02-03 : Patrick Koppenburg
+//-----------------------------------------------------------------------------
+
+// Declaration of the Algorithm Factory
+
+DECLARE_ALGORITHM_FACTORY( LoopOnParticles );
+
+//=============================================================================
+// Standard constructor, initializes variables
+//=============================================================================
+LoopOnParticles::LoopOnParticles( const std::string& name,
+                    ISvcLocator* pSvcLocator)
+  : DVAlgorithm ( name , pSvcLocator )
+{
+  
+}
+//=============================================================================
+// Destructor
+//=============================================================================
+LoopOnParticles::~LoopOnParticles() {}; 
+
+//=============================================================================
+// Initialisation. Check parameters
+//=============================================================================
+StatusCode LoopOnParticles::initialize() {
+
+  StatusCode sc = DVAlgorithm::initialize();
+  if (!sc) return sc;
+  debug() << "==> Initialise" << endreq;
+
+  return StatusCode::SUCCESS;
+};
+
+//=============================================================================
+//  Finalize
+//=============================================================================
+StatusCode LoopOnParticles::finalize() {
+
+  debug() << "==> Finalize" << endreq;
+
+  return DVAlgorithm::finalize();
+}
+
+//=============================================================================
+// Main execution
+//=============================================================================
+StatusCode LoopOnParticles::execute() {
+
+  debug() << "==> Execute" << endreq;
+
+  // Retrieve the particles and vertices from PhysDesktop 
+  Particle::ConstVector parts = desktop()->particles();
+
+  // put a filter here...
+
+  verbose() << "Found " << parts.size() << " particles in desktop" << endmsg;
+  counter("Particles")+= parts.size();
+
+  // Loop
+  Particle::ConstVector::const_iterator iL;
+  for ( iL = parts.begin() ; iL != parts.end() ; iL++ ) {
+    const LHCb::ParticleProperty* PP = ppSvc()->find ( (*iL)->particleID() );
+    
+    info() << "A " << PP->particle() 
+           << " (ID= " <<  (*iL)->particleID().pid() 
+           << ") has momentum " << (*iL)->momentum()/GeV
+           << " and mass " <<  (*iL)->measuredMass()/GeV << " GeV" << endreq;
+    if (produceHistos()){
+      plot( (*iL)->pt()/GeV , "Pt of Particle (GeV)", 0., 10.);
+      plot( (*iL)->p()/GeV , "Momentum of Particle (GeV)", 0., 100.);
+      plot( (*iL)->measuredMass()/GeV , 
+            "Mass of Particle (GeV)", 0., 5.);
+      plot( (*iL)->measuredMass()/MeV , 
+            "Mass of Particle (MeV)", 0., 150.);
+    }
+    
+  }// - loop
+ 
+  verbose() << " Calling SetFilterPassed " <<  endreq;
+  setFilterPassed(true);
+
+  return StatusCode::SUCCESS;
+};
+
+//=============================================================================

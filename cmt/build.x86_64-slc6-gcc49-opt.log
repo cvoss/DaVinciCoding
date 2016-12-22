@@ -1,0 +1,151 @@
+#===============================================================================
+# Building package Phys/DaVinciUser [1/1]
+#===============================================================================
+Thu Dec 22 13:04:26 CET 2016
+v8r5p2 Phys/DaVinciUser
+# Building group all
+#CMT---> Info: Execute action make => gmake bin=../x86_64-slc6-gcc49-opt/ all
+gmake[1]: Entering directory `/.automount/home/home__home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3/Phys/DaVinciUser/cmt'
+#CMT---> (Makefile.header) Rebuilding ../x86_64-slc6-gcc49-opt/x86_64-slc6-gcc49-opt.make
+#CMT---> (Makefile.header) Rebuilding ../x86_64-slc6-gcc49-opt/setup.make
+#CMT---> (Makefile.header) Rebuilding ../x86_64-slc6-gcc49-opt/constituents.make
+#CMT---> (constituents.make) Rebuilding library links
+#CMT---> (constituents.make) all done
+#CMT---> (constituents.make) Building DaVinciUser.make
+#CMT---> Info: Library DaVinciUser
+#CMT---> (constituents.make) Starting DaVinciUser
+#CMT---> compiling ../src/MyA2MuMuAnalysis.cpp
+#CMT---> (DaVinciUser.make) Rebuilding ../x86_64-slc6-gcc49-opt/DaVinciUser_dependencies.make
+lcg-g++-4.9.3 -c -O2 -DNDEBUG -fmessage-length=0 -Df2cFortran -fPIC -D_GNU_SOURCE -Dlinux -Dunix -pipe -Wall -Wextra -Werror=return-type -pthread -pedantic -Wno-long-long  -std=c++11 -Wno-deprecated -Wno-unused-local-typedefs -std=c++11  -DAPPNAME=\"DaVinciUser\" -DAPPVERS=\"v8r5p2\"  -D_GNU_SOURCE -DGAUDI_V20_COMPAT  -DBOOST_FILESYSTEM_VERSION=3  -DBOOST_SPIRIT_USE_PHOENIX_V3   -DHAVE_GAUDI_PLUGINSVC  -I"/home/home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3/InstallArea/x86_64-slc6-gcc49-opt/include" -I"/cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v41r3/InstallArea/x86_64-slc6-gcc49-opt/include" -I"/cvmfs/lhcb.cern.ch/lib/lhcb/ANALYSIS/ANALYSIS_v17r3/InstallArea/x86_64-slc6-gcc49-opt/include" -I"/cvmfs/lhcb.cern.ch/lib/lhcb/STRIPPING/STRIPPING_v10r8/InstallArea/x86_64-slc6-gcc49-opt/include" -I"/cvmfs/lhcb.cern.ch/lib/lhcb/PHYS/PHYS_v22r2/InstallArea/x86_64-slc6-gcc49-opt/include" -I"/cvmfs/lhcb.cern.ch/lib/lhcb/REC/REC_v20r1/InstallArea/x86_64-slc6-gcc49-opt/include" -I"/cvmfs/lhcb.cern.ch/lib/lhcb/LBCOM/LBCOM_v19r1/InstallArea/x86_64-slc6-gcc49-opt/include" -I"/cvmfs/lhcb.cern.ch/lib/lhcb/LHCB/LHCB_v41r1/InstallArea/x86_64-slc6-gcc49-opt/include" -I"/cvmfs/lhcb.cern.ch/lib/lhcb/GAUDI/GAUDI_v27r1/InstallArea/x86_64-slc6-gcc49-opt/include" -I"/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/ROOT/6.06.02/x86_64-slc6-gcc49-opt/include" -I"/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/COOL/3_1_3/x86_64-slc6-gcc49-opt/include" -I"/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/ROOT/6.06.02/x86_64-slc6-gcc49-opt/include" -I"/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/CORAL/3_1_3/x86_64-slc6-gcc49-opt/include" -I"/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/Boost/1.59.0_python2.7/x86_64-slc6-gcc49-opt/include/boost-1_59" -I"/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/Python/2.7.10/x86_64-slc6-gcc49-opt/include/python2.7" -I"/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/xrootd/4.2.3/x86_64-slc6-gcc49-opt/include" -I"/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/tbb/42_20140122/x86_64-slc6-gcc49-opt/include" -I"/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/GSL/1.10/x86_64-slc6-gcc49-opt/include" -I"/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/vdt/0.3.6/x86_64-slc6-gcc49-opt/include" -I"/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/eigen/3.2.7/x86_64-slc6-gcc49-opt/include/eigen3" -I"/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/AIDA/3.2.1/x86_64-slc6-gcc49-opt/src/cpp" -I"/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/XercesC/3.1.1p1/x86_64-slc6-gcc49-opt/include" -I"/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/clhep/2.3.1.1/x86_64-slc6-gcc49-opt/include" -I"/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/mysql/5.5.30/x86_64-slc6-gcc49-opt/include" -I"/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/HepMC/2.06.09/x86_64-slc6-gcc49-opt/include" -I"/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/fastjet/3.1.1/x86_64-slc6-gcc49-opt/include" -I"/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Platforms/src" -I"/cvmfs/lhcb.cern.ch/lib/lhcb/LHCB/LHCB_v41r1/Kernel/XMLSummaryBase/src" -I"/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/TCK/L0TCK/v5r13/src"                                                                                                                                                                          -UNDEBUG              -DCOUNT_INSTANCES                                                                                                                                                                                                                                                                                                                         -DXERCESC_GE_31                                     -MP -MMD -MT ../x86_64-slc6-gcc49-opt/MyA2MuMuAnalysis.o -MT ../x86_64-slc6-gcc49-opt/MyA2MuMuAnalysis.d -MF ../x86_64-slc6-gcc49-opt/MyA2MuMuAnalysis.d -o ../x86_64-slc6-gcc49-opt/MyA2MuMuAnalysis.o ../src/MyA2MuMuAnalysis.cpp
+#CMT---> building static library ../x86_64-slc6-gcc49-opt/libDaVinciUser.a
+[ ! -f ../x86_64-slc6-gcc49-opt/libDaVinciUser.a ] || \rm -f ../x86_64-slc6-gcc49-opt/libDaVinciUser.a
+ar cr ../x86_64-slc6-gcc49-opt/libDaVinciUser.a ../x86_64-slc6-gcc49-opt/ReadMLPDD2011Uni.o ../x86_64-slc6-gcc49-opt/KSBackground.o ../x86_64-slc6-gcc49-opt/MyDataAnalysis.o ../x86_64-slc6-gcc49-opt/WriteGenMCKinematics.o ../x86_64-slc6-gcc49-opt/BkgSelelection.o ../x86_64-slc6-gcc49-opt/MyReduceData.o ../x86_64-slc6-gcc49-opt/MySelectionAnalysis.o ../x86_64-slc6-gcc49-opt/ReadMLPLL2011Uni.o ../x86_64-slc6-gcc49-opt/AngularDalitz.o ../x86_64-slc6-gcc49-opt/PiToKSubstitution.o ../x86_64-slc6-gcc49-opt/ReadMLPDD2012.o ../x86_64-slc6-gcc49-opt/BsLpKPIDSubstitutionTool.o ../x86_64-slc6-gcc49-opt/BdToBsSubstitution.o ../x86_64-slc6-gcc49-opt/NoPIDSubstitution.o ../x86_64-slc6-gcc49-opt/MyMVATraining.o ../x86_64-slc6-gcc49-opt/PIDSubstitutionTool.o ../x86_64-slc6-gcc49-opt/LambdaToKsSubstitution.o ../x86_64-slc6-gcc49-opt/WritePureKinematics.o ../x86_64-slc6-gcc49-opt/MCMatch.o ../x86_64-slc6-gcc49-opt/MyA2MuMuAnalysis.o ../x86_64-slc6-gcc49-opt/ReadMLPLL2012Uni.o ../x86_64-slc6-gcc49-opt/MuMuMomentum.o ../x86_64-slc6-gcc49-opt/BLppiToolNoCorrect.o ../x86_64-slc6-gcc49-opt/AmenterosPodolanski.o ../x86_64-slc6-gcc49-opt/HelicityAngle.o ../x86_64-slc6-gcc49-opt/BLppiToolNoUnCorrect.o ../x86_64-slc6-gcc49-opt/MultCand.o ../x86_64-slc6-gcc49-opt/LbLcKTuple.o ../x86_64-slc6-gcc49-opt/PiToPSubstitution.o ../x86_64-slc6-gcc49-opt/BDpp.o ../x86_64-slc6-gcc49-opt/SquareDalitz.o ../x86_64-slc6-gcc49-opt/ReadBDTLL2012Ada.o
+ranlib ../x86_64-slc6-gcc49-opt/libDaVinciUser.a
+cat /dev/null >../x86_64-slc6-gcc49-opt/DaVinciUser.stamp
+#CMT---> building shared library ../x86_64-slc6-gcc49-opt/libDaVinciUser.so
+if test "1"; then QUIET=; else QUIET=1; fi; QUIET=${QUIET} bin=../x86_64-slc6-gcc49-opt/ /cvmfs/lhcb.cern.ch/lib/contrib/CMT/v1r20p20090520/mgr/cmt_make_shlib_common.sh extract "x86_64-slc6-gcc49-opt," DaVinciUser -fPIC -ldl -Wl,--as-needed -Wl,--no-undefined -pthread  -Wl,-z,max-page-size=0x1000  -L/home/home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3/InstallArea/x86_64-slc6-gcc49-opt/lib  -L/cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v41r3/InstallArea/x86_64-slc6-gcc49-opt/lib  -L/cvmfs/lhcb.cern.ch/lib/lhcb/ANALYSIS/ANALYSIS_v17r3/InstallArea/x86_64-slc6-gcc49-opt/lib  -L/cvmfs/lhcb.cern.ch/lib/lhcb/STRIPPING/STRIPPING_v10r8/InstallArea/x86_64-slc6-gcc49-opt/lib  -L/cvmfs/lhcb.cern.ch/lib/lhcb/PHYS/PHYS_v22r2/InstallArea/x86_64-slc6-gcc49-opt/lib  -L/cvmfs/lhcb.cern.ch/lib/lhcb/REC/REC_v20r1/InstallArea/x86_64-slc6-gcc49-opt/lib  -L/cvmfs/lhcb.cern.ch/lib/lhcb/LBCOM/LBCOM_v19r1/InstallArea/x86_64-slc6-gcc49-opt/lib  -L/cvmfs/lhcb.cern.ch/lib/lhcb/LHCB/LHCB_v41r1/InstallArea/x86_64-slc6-gcc49-opt/lib  -L/cvmfs/lhcb.cern.ch/lib/lhcb/GAUDI/GAUDI_v27r1/InstallArea/x86_64-slc6-gcc49-opt/lib                -lLoKiAlgo     -lLoKiArrayFunctorsLib           -lLoKiArrayFunctorsLib       -lDecayTreeTupleBaseLib   -lDecayTreeFitter   -lDaVinciKernelLib   -lLoKiPhysMCLib   -lLoKiGenMCLib   -lDaVinciMCKernelLib   -lLoKiPhysLib   -lLoKiProtoParticles   -lLoKiTracksLib   -lLoKiUtils   -lKalmanFilter   -lDaVinciInterfacesLib   -lDaVinciTypesLib             -lCaloUtils         -lLoKiHltLib   -lEventPackerLib   -lHltEvent   -lMicroDstLib     -lPhysEvent   -lCaloInterfaces   -lTrackFitEvent         -lRecEvent   -lLoKiMCLib     -lFTDetLib     -lMCEvent   -lLoKiGenLib   -lGenEvent           -lTrackKernel   -lTrackEvent     -lL0Event   -lCaloDetLib   -lLinkerEvent     -lLoKiCoreLib   -lL0Base   -lDAQKernelLib     -lDetCondLib   -lMuonDetLib   -lMuonKernelLib   -lOTDetLib   -lSTDetLib   -lVeloDetLib   -lVPDetLib   -lLHCbKernel   -lPartPropLib   -lDetDescCnvLib   -lDetDescLib   -lHltInterfaces   -lLHCbMathLib   -lGaudiGSLLib   -lGaudiPythonLib   -lGaudiAlgLib   -lGaudiUtilsLib   -lGaudiObjDescLib   -lRelationsLib   -lMDFLib   -lDAQEventLib   -lXmlToolsLib   -lGaudiKernel   -lGaudiPluginService   -lVectorClassLib         -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/ROOT/6.06.02/x86_64-slc6-gcc49-opt/lib -lCore   -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/COOL/3_1_3/x86_64-slc6-gcc49-opt/lib -llcg_CoolKernel -llcg_CoolApplication   -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/ROOT/6.06.02/x86_64-slc6-gcc49-opt/lib -lCore -lTree -lpthread  -lRIO -lMathCore -lGenVector  -lMathCore -lGenVector -lHist -lXMLIO  -lMLP -lTMVA -lGraf -lHist -lMatrix -lTreePlayer -lGpad -lGraf3d -lPhysics -lHist -lTreePlayer -lCore -lGui -lHist -lGpad -lMathCore -lMatrix -lPhysics -lRooFit -lRooFitCore -lFoam -lMinuit -lRooStats -lTMVA  -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/CORAL/3_1_3/x86_64-slc6-gcc49-opt/lib -llcg_CoralBase  -llcg_CoralKernel -llcg_RelationalAccess    -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/Boost/1.59.0_python2.7/x86_64-slc6-gcc49-opt/lib  -lboost_system-gcc49-mt-1_59   -lboost_regex-gcc49-mt-1_59  -lboost_regex-gcc49-mt-1_59  -lboost_system-gcc49-mt-1_59   -lboost_iostreams-gcc49-mt-1_59   -lboost_filesystem-gcc49-mt-1_59  -lboost_program_options-gcc49-mt-1_59  -lboost_iostreams-gcc49-mt-1_59   -lboost_filesystem-gcc49-mt-1_59  -lboost_unit_test_framework-gcc49-mt-1_59 -lboost_regex-gcc49-mt-1_59   -lboost_regex-gcc49-mt-1_59   -lboost_regex-gcc49-mt-1_59  -lboost_filesystem-gcc49-mt-1_59        -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/Python/2.7.10/x86_64-slc6-gcc49-opt/lib -lpython2.7 -lutil -lpthread   -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/xrootd/4.2.3/x86_64-slc6-gcc49-opt/lib64   -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/tbb/42_20140122/x86_64-slc6-gcc49-opt/lib -ltbb  -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/GSL/1.10/x86_64-slc6-gcc49-opt/lib -lgsl -lgslcblas   -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/vdt/0.3.6/x86_64-slc6-gcc49-opt/lib -lvdt       -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/XercesC/3.1.1p1/x86_64-slc6-gcc49-opt/lib -lxerces-c -lpthread  -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/clhep/2.3.1.1/x86_64-slc6-gcc49-opt/lib         -lCLHEP-Cast-2.3.1.1        -lCLHEP-Evaluator-2.3.1.1        -lCLHEP-Exceptions-2.3.1.1        -lCLHEP-GenericFunctions-2.3.1.1        -lCLHEP-Geometry-2.3.1.1        -lCLHEP-Random-2.3.1.1        -lCLHEP-RandomObjects-2.3.1.1        -lCLHEP-RefCount-2.3.1.1         -lCLHEP-Vector-2.3.1.1        -lCLHEP-Matrix-2.3.1.1    -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/lapack/3.5.0/x86_64-slc6-gcc49-opt/lib -lLAPACK   -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/blas/20110419/x86_64-slc6-gcc49-opt/lib -lBLAS   -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/mysql/5.5.30/x86_64-slc6-gcc49-opt/lib -lmysqlclient_r   -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/HepMC/2.06.09/x86_64-slc6-gcc49-opt/lib -lHepMC     -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/fastjet/3.1.1/x86_64-slc6-gcc49-opt/lib -lfastjet -lfastjettools                  
+lcg-g++-4.9.3 -L/home/home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3/InstallArea/x86_64-slc6-gcc49-opt/lib -L/cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v41r3/InstallArea/x86_64-slc6-gcc49-opt/lib -L/cvmfs/lhcb.cern.ch/lib/lhcb/ANALYSIS/ANALYSIS_v17r3/InstallArea/x86_64-slc6-gcc49-opt/lib -L/cvmfs/lhcb.cern.ch/lib/lhcb/STRIPPING/STRIPPING_v10r8/InstallArea/x86_64-slc6-gcc49-opt/lib -L/cvmfs/lhcb.cern.ch/lib/lhcb/PHYS/PHYS_v22r2/InstallArea/x86_64-slc6-gcc49-opt/lib -L/cvmfs/lhcb.cern.ch/lib/lhcb/REC/REC_v20r1/InstallArea/x86_64-slc6-gcc49-opt/lib -L/cvmfs/lhcb.cern.ch/lib/lhcb/LBCOM/LBCOM_v19r1/InstallArea/x86_64-slc6-gcc49-opt/lib -L/cvmfs/lhcb.cern.ch/lib/lhcb/LHCB/LHCB_v41r1/InstallArea/x86_64-slc6-gcc49-opt/lib -L/cvmfs/lhcb.cern.ch/lib/lhcb/GAUDI/GAUDI_v27r1/InstallArea/x86_64-slc6-gcc49-opt/lib -shared -o libDaVinciUser.so "DaVinciUsertemp_shlib/AmenterosPodolanski.o" "DaVinciUsertemp_shlib/AngularDalitz.o" "DaVinciUsertemp_shlib/BDpp.o" "DaVinciUsertemp_shlib/BdToBsSubstitution.o" "DaVinciUsertemp_shlib/BkgSelelection.o" "DaVinciUsertemp_shlib/BLppiToolNoCorrect.o" "DaVinciUsertemp_shlib/BLppiToolNoUnCorrect.o" "DaVinciUsertemp_shlib/BsLpKPIDSubstitutionTool.o" "DaVinciUsertemp_shlib/HelicityAngle.o" "DaVinciUsertemp_shlib/KSBackground.o" "DaVinciUsertemp_shlib/LambdaToKsSubstitution.o" "DaVinciUsertemp_shlib/LbLcKTuple.o" "DaVinciUsertemp_shlib/MCMatch.o" "DaVinciUsertemp_shlib/MultCand.o" "DaVinciUsertemp_shlib/MuMuMomentum.o" "DaVinciUsertemp_shlib/MyA2MuMuAnalysis.o" "DaVinciUsertemp_shlib/MyDataAnalysis.o" "DaVinciUsertemp_shlib/MyMVATraining.o" "DaVinciUsertemp_shlib/MyReduceData.o" "DaVinciUsertemp_shlib/MySelectionAnalysis.o" "DaVinciUsertemp_shlib/NoPIDSubstitution.o" "DaVinciUsertemp_shlib/PIDSubstitutionTool.o" "DaVinciUsertemp_shlib/PiToKSubstitution.o" "DaVinciUsertemp_shlib/PiToPSubstitution.o" "DaVinciUsertemp_shlib/ReadBDTLL2012Ada.o" "DaVinciUsertemp_shlib/ReadMLPDD2011Uni.o" "DaVinciUsertemp_shlib/ReadMLPDD2012.o" "DaVinciUsertemp_shlib/ReadMLPLL2011Uni.o" "DaVinciUsertemp_shlib/ReadMLPLL2012Uni.o" "DaVinciUsertemp_shlib/SquareDalitz.o" "DaVinciUsertemp_shlib/WriteGenMCKinematics.o" "DaVinciUsertemp_shlib/WritePureKinematics.o" -fPIC -ldl -Wl,--as-needed -Wl,--no-undefined -pthread -Wl,-z,max-page-size=0x1000 -L/home/home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3/InstallArea/x86_64-slc6-gcc49-opt/lib -L/cvmfs/lhcb.cern.ch/lib/lhcb/DAVINCI/DAVINCI_v41r3/InstallArea/x86_64-slc6-gcc49-opt/lib -L/cvmfs/lhcb.cern.ch/lib/lhcb/ANALYSIS/ANALYSIS_v17r3/InstallArea/x86_64-slc6-gcc49-opt/lib -L/cvmfs/lhcb.cern.ch/lib/lhcb/STRIPPING/STRIPPING_v10r8/InstallArea/x86_64-slc6-gcc49-opt/lib -L/cvmfs/lhcb.cern.ch/lib/lhcb/PHYS/PHYS_v22r2/InstallArea/x86_64-slc6-gcc49-opt/lib -L/cvmfs/lhcb.cern.ch/lib/lhcb/REC/REC_v20r1/InstallArea/x86_64-slc6-gcc49-opt/lib -L/cvmfs/lhcb.cern.ch/lib/lhcb/LBCOM/LBCOM_v19r1/InstallArea/x86_64-slc6-gcc49-opt/lib -L/cvmfs/lhcb.cern.ch/lib/lhcb/LHCB/LHCB_v41r1/InstallArea/x86_64-slc6-gcc49-opt/lib -L/cvmfs/lhcb.cern.ch/lib/lhcb/GAUDI/GAUDI_v27r1/InstallArea/x86_64-slc6-gcc49-opt/lib -lLoKiAlgo -lLoKiArrayFunctorsLib -lLoKiArrayFunctorsLib -lDecayTreeTupleBaseLib -lDecayTreeFitter -lDaVinciKernelLib -lLoKiPhysMCLib -lLoKiGenMCLib -lDaVinciMCKernelLib -lLoKiPhysLib -lLoKiProtoParticles -lLoKiTracksLib -lLoKiUtils -lKalmanFilter -lDaVinciInterfacesLib -lDaVinciTypesLib -lCaloUtils -lLoKiHltLib -lEventPackerLib -lHltEvent -lMicroDstLib -lPhysEvent -lCaloInterfaces -lTrackFitEvent -lRecEvent -lLoKiMCLib -lFTDetLib -lMCEvent -lLoKiGenLib -lGenEvent -lTrackKernel -lTrackEvent -lL0Event -lCaloDetLib -lLinkerEvent -lLoKiCoreLib -lL0Base -lDAQKernelLib -lDetCondLib -lMuonDetLib -lMuonKernelLib -lOTDetLib -lSTDetLib -lVeloDetLib -lVPDetLib -lLHCbKernel -lPartPropLib -lDetDescCnvLib -lDetDescLib -lHltInterfaces -lLHCbMathLib -lGaudiGSLLib -lGaudiPythonLib -lGaudiAlgLib -lGaudiUtilsLib -lGaudiObjDescLib -lRelationsLib -lMDFLib -lDAQEventLib -lXmlToolsLib -lGaudiKernel -lGaudiPluginService -lVectorClassLib -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/ROOT/6.06.02/x86_64-slc6-gcc49-opt/lib -lCore -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/COOL/3_1_3/x86_64-slc6-gcc49-opt/lib -llcg_CoolKernel -llcg_CoolApplication -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/ROOT/6.06.02/x86_64-slc6-gcc49-opt/lib -lCore -lTree -lpthread -lRIO -lMathCore -lGenVector -lMathCore -lGenVector -lHist -lXMLIO -lMLP -lTMVA -lGraf -lHist -lMatrix -lTreePlayer -lGpad -lGraf3d -lPhysics -lHist -lTreePlayer -lCore -lGui -lHist -lGpad -lMathCore -lMatrix -lPhysics -lRooFit -lRooFitCore -lFoam -lMinuit -lRooStats -lTMVA -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/CORAL/3_1_3/x86_64-slc6-gcc49-opt/lib -llcg_CoralBase -llcg_CoralKernel -llcg_RelationalAccess -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/Boost/1.59.0_python2.7/x86_64-slc6-gcc49-opt/lib -lboost_system-gcc49-mt-1_59 -lboost_regex-gcc49-mt-1_59 -lboost_regex-gcc49-mt-1_59 -lboost_system-gcc49-mt-1_59 -lboost_iostreams-gcc49-mt-1_59 -lboost_filesystem-gcc49-mt-1_59 -lboost_program_options-gcc49-mt-1_59 -lboost_iostreams-gcc49-mt-1_59 -lboost_filesystem-gcc49-mt-1_59 -lboost_unit_test_framework-gcc49-mt-1_59 -lboost_regex-gcc49-mt-1_59 -lboost_regex-gcc49-mt-1_59 -lboost_regex-gcc49-mt-1_59 -lboost_filesystem-gcc49-mt-1_59 -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/Python/2.7.10/x86_64-slc6-gcc49-opt/lib -lpython2.7 -lutil -lpthread -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/xrootd/4.2.3/x86_64-slc6-gcc49-opt/lib64 -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/tbb/42_20140122/x86_64-slc6-gcc49-opt/lib -ltbb -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/GSL/1.10/x86_64-slc6-gcc49-opt/lib -lgsl -lgslcblas -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/vdt/0.3.6/x86_64-slc6-gcc49-opt/lib -lvdt -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/XercesC/3.1.1p1/x86_64-slc6-gcc49-opt/lib -lxerces-c -lpthread -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/clhep/2.3.1.1/x86_64-slc6-gcc49-opt/lib -lCLHEP-Cast-2.3.1.1 -lCLHEP-Evaluator-2.3.1.1 -lCLHEP-Exceptions-2.3.1.1 -lCLHEP-GenericFunctions-2.3.1.1 -lCLHEP-Geometry-2.3.1.1 -lCLHEP-Random-2.3.1.1 -lCLHEP-RandomObjects-2.3.1.1 -lCLHEP-RefCount-2.3.1.1 -lCLHEP-Vector-2.3.1.1 -lCLHEP-Matrix-2.3.1.1 -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/lapack/3.5.0/x86_64-slc6-gcc49-opt/lib -lLAPACK -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/blas/20110419/x86_64-slc6-gcc49-opt/lib -lBLAS -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/mysql/5.5.30/x86_64-slc6-gcc49-opt/lib -lmysqlclient_r -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/HepMC/2.06.09/x86_64-slc6-gcc49-opt/lib -lHepMC -L/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCGCMT/LCGCMT_84/LCG_Settings/../../../LCG_84/fastjet/3.1.1/x86_64-slc6-gcc49-opt/lib -lfastjet -lfastjettools
+if test -f ../x86_64-slc6-gcc49-opt/libDaVinciUser.so ; then cat /dev/null >../x86_64-slc6-gcc49-opt/DaVinciUser.shstamp ; fi
+/cvmfs/lhcb.cern.ch/lib/contrib/CMT/v1r20p20090520/mgr/cmt_install_action.sh \
+	    -source "`(cd ../x86_64-slc6-gcc49-opt/; pwd)`" \
+	    -name "libDaVinciUser.so" \
+	    -out "/home/home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3/InstallArea/x86_64-slc6-gcc49-opt/lib" \
+	    -cmd "python /cvmfs/lhcb.cern.ch/lib/lhcb/GAUDI/GAUDI_v27r1/GaudiPolicy/scripts/install.py -xCVS -x*~ -x*.stamp -x*.bak -x.* -x*.pyc -x*.pyo -s --log=./install.x86_64-slc6-gcc49-opt.history " \
+	    -cmtpath "/home/home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3"
+#CMT---> DaVinciUser : library ok
+#CMT---> DaVinciUser ok
+#CMT---> installing file libDaVinciUser.so into /home/home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3/InstallArea/x86_64-slc6-gcc49-opt/lib
+eval ${install_command} ${full_source_name} ${dest_file_path}
+python /cvmfs/lhcb.cern.ch/lib/lhcb/GAUDI/GAUDI_v27r1/GaudiPolicy/scripts/install.py -xCVS -x*~ -x*.stamp -x*.bak -x.* -x*.pyc -x*.pyo -s --log=./install.x86_64-slc6-gcc49-opt.history /home/home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3/Phys/DaVinciUser/x86_64-slc6-gcc49-opt/libDaVinciUser.so /home/home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3/InstallArea/x86_64-slc6-gcc49-opt/lib/libDaVinciUser.so
+Create Link to '../../../Phys/DaVinciUser/x86_64-slc6-gcc49-opt/libDaVinciUser.so' in '/.automount/home/home__home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3/InstallArea/x86_64-slc6-gcc49-opt/lib'
+echo ${full_source_name} >${ref_file}
+if test "${makecmd}"; then set +v; fi
+#CMT---> installation done
+#CMT---> (constituents.make) DaVinciUser done
+#CMT---> (constituents.make) Building DaVinciUserComponentsList.make
+#CMT---> (constituents.make) Building DaVinciUserConf.make
+#CMT---> Info: Document DaVinciUserConf
+#CMT---> Info: Document DaVinciUserComponentsList
+#CMT---> (constituents.make) Creating DaVinciUserConf.lock and Starting DaVinciUserConf
+#CMT---> (constituents.make) Creating DaVinciUserComponentsList.lock and Starting DaVinciUserComponentsList
+genconf.exe   -o /home/home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3/Phys/DaVinciUser/x86_64-slc6-gcc49-opt/genConf/DaVinciUser -p DaVinciUser \
+	  --configurable-module=GaudiKernel.Proxy \
+	  --configurable-default-name=Configurable.DefaultName \
+	  --configurable-algorithm=ConfigurableAlgorithm \
+	  --configurable-algtool=ConfigurableAlgTool \
+	  --configurable-auditor=ConfigurableAuditor \
+          --configurable-service=ConfigurableService \
+	  -i ../x86_64-slc6-gcc49-opt/libDaVinciUser.so
+Generating componentslist file for libDaVinciUser.so
+cd ../x86_64-slc6-gcc49-opt;listcomponents.exe --output ../x86_64-slc6-gcc49-opt/DaVinciUser.components libDaVinciUser.so
+:::::: libraries : [ DaVinciUser ] ::::::
+:::: processing library: DaVinciUser...
+Warning in <UnknownClass::SetDisplay>: DISPLAY not set, setting it to lx1b02.physik.rwth-aachen.de:0.0
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+ - component: AmenterosPodolanski (AlgTool)
+ - component: AngularDalitz (AlgTool)
+ - component: BDpp (Algorithm)
+ - component: BLppiToolNoCorrect (AlgTool)
+ - component: BLppiToolNoUnCorrect (AlgTool)
+ - component: BdToBsSubstitution (AlgTool)
+ - component: BkgSelelection (Algorithm)
+ - component: BsLpKPIDSubstitutionTool (AlgTool)
+ - component: HelicityAngle (AlgTool)
+ - component: KSBackground (Algorithm)
+ - component: LambdaToKsSubstitution (AlgTool)
+ - component: LbLcKTuple (Algorithm)
+ - component: MCMatch (Algorithm)
+ - component: MuMuMomentum (Algorithm)
+ - component: MultCand (Algorithm)
+ - component: MyA2MuMuAnalysis (Algorithm)
+ - component: MyDataAnalysis (Algorithm)
+ - component: MyMVATraining (Algorithm)
+ - component: MyReduceData (Algorithm)
+ - component: MySelectionAnalysis (Algorithm)
+ - component: NoPIDSubstitution (AlgTool)
+ - component: PIDSubstitutionTool (AlgTool)
+ - component: PiToKSubstitution (AlgTool)
+ - component: PiToPSubstitution (AlgTool)
+ - component: SquareDalitz (Algorithm)
+ - component: WriteGenMCKinematics (Algorithm)
+ - component: WritePureKinematics (Algorithm)
+#CMT---> (constituents.make) DaVinciUserComponentsList done
+#CMT---> (constituents.make) Building DaVinciUserMergeComponentsList.make
+:::::: libraries : [ DaVinciUser ] :::::: [DONE]
+Installing /home/home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3/Phys/DaVinciUser/x86_64-slc6-gcc49-opt/genConf/DaVinciUser in /home/home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3/InstallArea/x86_64-slc6-gcc49-opt/python
+Copy '../../../../Phys/DaVinciUser/x86_64-slc6-gcc49-opt/genConf/DaVinciUser/DaVinciUserConf.py' -> '/.automount/home/home__home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3/InstallArea/x86_64-slc6-gcc49-opt/python/DaVinciUser/DaVinciUserConf.py'
+#CMT---> (constituents.make) DaVinciUserConf done
+#CMT---> (constituents.make) Building DaVinciUser_python_init.make
+#CMT---> (constituents.make) Building DaVinciUserConfDbMerge.make
+#CMT---> Info: Document DaVinciUserMergeComponentsList
+#CMT---> (constituents.make) Creating DaVinciUserMergeComponentsList.lock and Starting DaVinciUserMergeComponentsList
+Running merge_componentslist  DaVinciUserMergeComponentsList
+python /cvmfs/lhcb.cern.ch/lib/lhcb/GAUDI/GAUDI_v27r1/GaudiPolicy/scripts/merge_files.py --do-merge \
+         --input-file ../x86_64-slc6-gcc49-opt/DaVinciUser.components --merged-file /home/home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3/InstallArea/x86_64-slc6-gcc49-opt/lib/DaVinci_v41r3.components
+INFO:LockFile:2016-12-22_13:14:08 - Locking on /home/home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3/InstallArea/gaudi_build_lock
+INFO:LockFile:2016-12-22_13:14:09 - Lock on /home/home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3/InstallArea/gaudi_build_lock released
+#CMT---> (constituents.make) DaVinciUserMergeComponentsList done
+#CMT---> Info: Document DaVinciUserConfDbMerge
+#CMT---> Info: Document DaVinciUser_python_init
+#CMT---> (constituents.make) Creating DaVinciUserConfDbMerge.lock and Starting DaVinciUserConfDbMerge
+#CMT---> (constituents.make) Creating DaVinciUser_python_init.lock and Starting DaVinciUser_python_init
+Running merge_genconfDb  DaVinciUserConfDbMerge
+python /cvmfs/lhcb.cern.ch/lib/lhcb/GAUDI/GAUDI_v27r1/GaudiPolicy/scripts/merge_files.py \
+          --do-merge \
+          --input-file /home/home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3/Phys/DaVinciUser/x86_64-slc6-gcc49-opt/genConf/DaVinciUser/DaVinciUser.confdb \
+          --merged-file /home/home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3/InstallArea/x86_64-slc6-gcc49-opt/lib/DaVinci_v41r3.confdb
+#CMT---> (constituents.make) DaVinciUser_python_init done
+INFO:LockFile:2016-12-22_13:14:10 - Locking on /home/home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3/InstallArea/gaudi_build_lock
+INFO:LockFile:2016-12-22_13:14:10 - Lock on /home/home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3/InstallArea/gaudi_build_lock released
+#CMT---> (constituents.make) DaVinciUserConfDbMerge done
+#CMT---> (constituents.make) Building zip_DaVinciUser_python_modules.make
+#CMT---> Info: Document zip_DaVinciUser_python_modules
+#CMT---> (constituents.make) Creating zip_DaVinciUser_python_modules.lock and Starting zip_DaVinciUser_python_modules
+test -d /home/home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3/InstallArea/x86_64-slc6-gcc49-opt/python && python /cvmfs/lhcb.cern.ch/lib/lhcb/GAUDI/GAUDI_v27r1/GaudiPolicy/scripts/ZipPythonDir.py /home/home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3/InstallArea/x86_64-slc6-gcc49-opt/python || echo Nothing to zip.
+INFO:LockFile:2016-12-22_13:14:14 - Locking on /home/home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3/InstallArea/gaudi_build_lock
+INFO:zipdir:Zipping directory '/home/home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3/InstallArea/x86_64-slc6-gcc49-opt/python'
+INFO:zipdir: M -> DaVinciUser/DaVinciUserConf.py
+INFO:zipdir:File '/.automount/home/home__home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3/InstallArea/x86_64-slc6-gcc49-opt/python.zip' closed
+INFO:LockFile:2016-12-22_13:14:14 - Lock on /home/home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3/InstallArea/gaudi_build_lock released
+#CMT---> (constituents.make) zip_DaVinciUser_python_modules done
+#CMT---> all ok.
+gmake[1]: Leaving directory `/.automount/home/home__home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3/Phys/DaVinciUser/cmt'
+Thu Dec 22 13:14:14 CET 2016
+# Building group cmt_actions
+#CMT---> Info: Execute action make => gmake bin=../x86_64-slc6-gcc49-opt/ cmt_actions
+gmake[1]: Entering directory `/.automount/home/home__home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3/Phys/DaVinciUser/cmt'
+#CMT---> (Makefile.header) Rebuilding ../x86_64-slc6-gcc49-opt/x86_64-slc6-gcc49-opt.make
+#CMT---> (Makefile.header) Rebuilding ../x86_64-slc6-gcc49-opt/setup.make
+#CMT---> (Makefile.header) Rebuilding ../x86_64-slc6-gcc49-opt/constituents.make
+#CMT---> cmt_actions ok.
+gmake[1]: Leaving directory `/.automount/home/home__home4/institut_1b/cvoss/cmtuser/DaVinci_v41r3/Phys/DaVinciUser/cmt'
+Thu Dec 22 13:14:31 CET 2016

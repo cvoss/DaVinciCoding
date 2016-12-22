@@ -1,0 +1,31 @@
+#============================================================================
+# Created    : 2002-05-23
+# Maintainer : Juan Palacios
+#
+# Documentation on the requirement file can be found at
+# http://cern.ch/lhcb-comp/Support/html/new_structure.pdf
+#============================================================================
+package           DaVinciUser
+version           v8r5p2
+
+#============================================================================
+# Structure, i.e. directories to process. 
+#============================================================================
+branches          cmt doc src options
+
+#============================================================================
+# Used packages.
+#============================================================================
+use DaVinciKernel      v*    Phys
+use MCEvent            v*    Event
+use LinkerEvent        v*    Event
+#============================================================================
+# Component library building rule
+#============================================================================
+library          DaVinciUser    ../src/*.cpp -import=AIDA
+
+#============================================================================
+# define component library link options
+#============================================================================
+apply_pattern component_library library=DaVinciUser
+#============================================================================

@@ -1,0 +1,8 @@
+// $Id: DaVinciUser_dll.cpp,v 1.1.1.1 2002-05-23 23:22:19 gcorti Exp $
+// Include files 
+
+#include "GaudiKernel/LoadFactoryEntries.h"
+
+
+LOAD_FACTORY_ENTRIES(DaVinciUser)
+

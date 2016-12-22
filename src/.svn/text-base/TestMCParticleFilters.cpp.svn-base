@@ -1,0 +1,143 @@
+// $Id: TestMCParticleFilters.cpp,v 1.2 2008-02-14 08:15:09 pkoppenb Exp $
+// Include files 
+
+// from Gaudi
+#include "GaudiKernel/AlgFactory.h" 
+#include "GaudiKernel/ParticleProperty.h"
+#include "GaudiKernel/IParticlePropertySvc.h"
+// from LHCb
+#include "Kernel/IMCParticleArrayFilter.h"
+#include "MCInterfaces/IPrintMCDecayTreeTool.h"
+#include "Event/MCParticle.h"
+
+// local
+#include "TestMCParticleFilters.h"
+
+//-----------------------------------------------------------------------------
+// Implementation file for class : TestMCParticleFilters
+//
+// 2007-07-26 : Juan Palacios
+//-----------------------------------------------------------------------------
+
+// Declaration of the Algorithm Factory
+DECLARE_ALGORITHM_FACTORY( TestMCParticleFilters );
+
+
+//=============================================================================
+// Standard constructor, initializes variables
+//=============================================================================
+TestMCParticleFilters::TestMCParticleFilters( const std::string& name,
+                                              ISvcLocator* pSvcLocator)
+  : 
+  GaudiAlgorithm ( name , pSvcLocator ),
+  m_MCPArrayFilter(0),
+  m_PrintMCDecayTreeTool(0),
+  m_ppSvc(0),
+  m_mcParticleLocationIn(LHCb::MCParticleLocation::Default),
+  m_mcParticleLocationOut(""),
+  m_arrayParticleFilterName("FilterMCParticleArrayByDecay")
+{
+  declareProperty("ParticleFilterName", m_arrayParticleFilterName);
+  declareProperty("MCParticleInputLocation", m_mcParticleLocationIn); 
+  declareProperty("MCParticleOutputLocation", m_mcParticleLocationOut); 
+}
+//=============================================================================
+// Destructor
+//=============================================================================
+TestMCParticleFilters::~TestMCParticleFilters() {} 
+
+//=============================================================================
+// Initialization
+//=============================================================================
+StatusCode TestMCParticleFilters::initialize() {
+  StatusCode sc = GaudiAlgorithm::initialize(); // must be executed first
+  if ( sc.isFailure() ) return sc;  // error printed already by GaudiAlgorithm
+
+  debug() << "==> Initialize" << endmsg;
+
+  m_MCPArrayFilter = tool<IMCParticleArrayFilter>(m_arrayParticleFilterName,
+                                                  this);
+  m_PrintMCDecayTreeTool = tool<IPrintMCDecayTreeTool>("PrintMCDecayTreeTool", this);
+
+  m_ppSvc = svc<IParticlePropertySvc>("ParticlePropertySvc", true);
+  
+  return (0!=m_MCPArrayFilter || 0!=m_PrintMCDecayTreeTool || 0!= m_ppSvc) 
+    ? StatusCode::SUCCESS : StatusCode::FAILURE;
+
+}
+//=============================================================================
+// Main execution
+//=============================================================================
+StatusCode TestMCParticleFilters::execute() {
+
+  debug() << "==> Execute" << endmsg;
+
+
+  debug() << "Getting LHCb::MCParticle::Container" << endmsg;
+  LHCb::MCParticle::Container* mcParts_ = get<LHCb::MCParticle::Container>(m_mcParticleLocationIn);
+  debug() << "Got LHCb::MCParticle::Container" << endmsg;
+
+  LHCb::MCParticle::ConstVector mcParts(mcParts_->size(), 0);
+  std::copy(mcParts_->begin(), mcParts_->end(), mcParts.begin());
+  
+
+  debug() << "Found " << mcParts.size() << " MCParticles" << endmsg;
+
+  /*
+  debug() << "PrintMCDecayTreeTool\n" << endmsg;
+  
+  m_PrintMCDecayTreeTool->printEventAsTree(mcParts);
+  */
+  
+  LHCb::MCParticle::ConstVector decays;
+  
+  m_MCPArrayFilter->filter(mcParts, decays);
+  
+  debug() << "Found " << decays.size() << " particles matching decay descriptor:" << endmsg;
+
+//   for (LHCb::MCParticle::ConstVector::const_iterator i= decays.begin(); 
+//        i != decays.end();
+//        ++i) {
+//     ParticleProperty* pp = ppSvc()->findByStdHepID( (*i)->particleID().pid() );
+//     std::cout<< " " << pp->particle() << "\n";
+//   }
+//   std::cout << "\n" << std::endl;
+  
+  
+//  m_PrintMCDecayTreeTool->printEventAsTree(decays);
+  
+  // write the particles to the TES
+  const std::string location = "/Event/"+m_mcParticleLocationOut;
+  LHCb::MCParticle::Container* x = new LHCb::MCParticle::Container();
+  x->reserve(decays.size());
+  for (LHCb::MCParticle::ConstVector::const_iterator i = decays.begin();
+       i != decays.end(); ++i) {
+    x->insert((LHCb::MCParticle*)*i);
+  }
+
+  debug() << "Putting "<< x->size() 
+          <<" decay particles in TES location " << location << endmsg;
+  
+  put(x,  location);
+
+  return StatusCode::SUCCESS;
+  
+}
+//=============================================================================
+IParticlePropertySvc* TestMCParticleFilters::ppSvc() const
+{
+  return m_ppSvc;
+}
+
+
+//=============================================================================
+//  Finalize
+//=============================================================================
+StatusCode TestMCParticleFilters::finalize() {
+
+  debug() << "==> Finalize" << endmsg;
+
+  return GaudiAlgorithm::finalize();  // must be called after all other actions
+}
+
+//=============================================================================

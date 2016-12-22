@@ -1,0 +1,49 @@
+// $Id: TestMCParticleFilters.h,v 1.2 2008-02-14 08:15:09 pkoppenb Exp $
+#ifndef TESTMCPARTICLEFILTERS_H 
+#define TESTMCPARTICLEFILTERS_H 1
+
+// Include files
+// from Gaudi
+#include "GaudiAlg/GaudiAlgorithm.h"
+
+
+/** @class TestMCParticleFilters TestMCParticleFilters.h
+ *  
+ *
+ *  @author Juan Palacios
+ *  @date   2007-07-26
+ */
+
+class IMCParticleArrayFilter;
+class IPrintMCDecayTreeTool;
+class IParticlePropertySvc;
+
+class TestMCParticleFilters : public GaudiAlgorithm {
+
+public: 
+  /// Standard constructor
+  TestMCParticleFilters( const std::string& name, ISvcLocator* pSvcLocator );
+
+  virtual ~TestMCParticleFilters( ); ///< Destructor
+
+  virtual StatusCode initialize();    ///< Algorithm initialization
+  virtual StatusCode execute   ();    ///< Algorithm execution
+  virtual StatusCode finalize  ();    ///< Algorithm finalization
+
+protected:
+
+private:
+
+  IParticlePropertySvc* ppSvc() const;
+
+private:
+
+  IMCParticleArrayFilter* m_MCPArrayFilter;
+  IPrintMCDecayTreeTool* m_PrintMCDecayTreeTool;
+  IParticlePropertySvc* m_ppSvc;
+  std::string m_mcParticleLocationIn;
+  std::string m_mcParticleLocationOut;
+  std::string m_arrayParticleFilterName;
+  
+};
+#endif // TESTMCPARTICLEFILTERS_H

@@ -1,0 +1,245 @@
+!$Id: release.notes,v 1.64 2009-01-15 13:58:49 jpalac Exp $
+!-----------------------------------------------------------------------------
+! Package     : Phys/DaVinciUser
+! Responsible : J. Palacios
+! Purpose     : Package for User to put their algorithms
+!-----------------------------------------------------------------------------
+
+!========================== DaVinciUser v8r5p2 2008-01-15 =================
+
+! 2008-12-23 - Patrick Koppenburg
+ - Remove .opts files.
+
+! 2008-12-06 - Vanay BELYAEV
+
+ - src/LoopOnParticles.cpp
+   minor fix for new particle properteis 
+ - cmt/requirements
+   verision increment to v8r5p2
+
+!========================== DaVinciUser v8r5p1 2008-11-26 =================
+
+! 2008-10-28 - Juan PALACIOS
+ - cmt/requirements
+  . Increase version to v8r5p1
+ - src/TestPVAssociation.cpp
+  . Adapt to new IPhysDesktop::primaryVertices() method.
+
+!========================== DaVinciUser v8r5 2008-08-05 ===================
+! 2008-07-10 - Patrick Koppenburg
+ - Remove obsolete DC06 tests
+
+!========================== DaVinciUser v8r4p2 2008-05-14 =================
+! 2008-05-14 - Patrick Koppenburg
+ - Undo the wrong commits by Sara Furcas.
+ - Increment to v8r4p2 and tag. This version is identical to v8r4p1, 
+   no need to release.
+
+! 2008-05-13 - Sara Furcas
+  - second import : 2 algorithms to select and to save the B candidate
+
+!========================== DaVinciUser v8r4p1 2008-04-24 =================
+
+! 2008-04-21 - Patrick Koppenburg
+ - changed desktop()->save() to dektop()->keep()
+
+! 2008-04-11 - Patrick Koppenburg
+ - No tabs in options 
+
+!========================== DaVinciUser v8r4 2008-03-06 ===================
+
+! 2008-02-14 - Patrick Koppenburg
+ - TestMCParticleFilters: dumpAsTree does not exist anymore
+ - v8r4
+
+!========================== DaVinciUser v8r3 2007-10-25 ===================
+
+! 2007-10-25 - Juan PALACIOS
+ - cmt/requirements
+  . Increase version to v8r3
+
+! 2007-09-25 - Juan PALACIOS
+ - Add src/TestMCParticleFilters{.cpp, .h}
+
+
+!========================== DaVinciUser v8r2 2007-09-24 ===================
+
+! 2007-08-22 - Patrick Koppenburg
+ - DC06Tests.cpp: bug fix. Use Particle constructor from ParticleID
+
+! 2007-07-26 - Juan Palacios
+ - cmt/requirements
+   . change component library pattern, with old old pattern algorithms 
+     were not found
+   . Increase version to v8r2
+
+
+! 2007-07-17 - Patrick Koppenburg
+ - Removed _load file. Release when needed.
+
+!========================== DaVinciUser v8r1 2007-03-09 ===================
+! 2007-02-07 - Juan PALACIOS
+  - src/TestPVAssociation.cpp
+    . Fix conversion from const VertexBase* to const RecVertex* problem
+      by using dynamic_cast.
+  - cmt/requirements
+    . Increase version to v8r1.
+
+!========================= DaVinciUser v8r0 2007-01-11 =====================
+! 2007-01-11 - Florence RANJARD
+ - fix *.cpp to use new FACTORY
+
+!========================== DaVinciUser v7r1 2006-10-04 ===================
+
+! 2006-09-29 - Juan PALACIOS
+
+	Increment version to v7r1
+
+! 2006-09-21 - J. Palacios
+  - src/DC06Tests1{.h, .cpp}
+    . Changed basicParticlePlots mass plots to be automatically centered on
+      particle's PDG mass.
+
+! 2006-09-14 - P. Koppenburg
+  Added new automatic particle-to-PV association features making use of
+  Juan's new table in PhysDesktop and IRelatedPV tool.
+  
+  - src/TestPVAssociation.{cpp,h}
+    . New test algorithm that tests all this
+  - options/DVTestPVAssociation.opts
+    . Relevant options. Tests the scheme in many many ways.
+
+! 2006-08-22 - Juan PALACIOS
+  - src/DC06Tests1.{.h, .cpp}
+    . Modify to use new Particle->Vertex relations scheme.
+
+!========================== DaVinciUser v7r0 2006-07-28 ===================
+
+! 2006-7-24 - Juan PALACIOS
+  -src/DC06Tests1.cpp
+   . fix minor bug
+
+! 2006-7-20 - Juan PALACIOS
+  - src/DC06Tests{.h, .cpp}, src/DC06Tests1{.h, .cpp}
+    . Adapt to new vertex classes.
+  - cmt/requirements
+    . Increase version number to v7r0
+
+!========================== DaVinciUser v6r2 2006-07-07 ===================
+
+! 2006-06-20 - Juan PALACIOS
+  - src/DC06Tests1.* more loops on particles, histograms according to particle 
+    type. Unloading of PVs and Patricle->PV relations, but the latter don't
+    work yet.
+  - src/LoopOnParticles.cpp: minor fixes.
+
+!========================== DaVinciUser v6r1 2006-05-29 ===================
+
+! 2006-05-15 - P. Koppenburg
+ - src/DC06Tests.*
+   . Do not stop when fit fails (to be solved!)
+   . Test impact parameters of pions from PV
+   
+! 2006-05-09 - P. Koppenburg
+ - src/DC06Tests.*
+   . Now prints out all details about all muons and build J/psis
+   
+!========================== DaVinciUser v6r0 2006-03-28 ===================
+! 2006-02-16 - P. Koppenburg
+ - src/DC06Tests.*
+   . New algorithm with some tests
+  
+! 2006-02-16 - P. Koppenburg
+ - */LoopOnCharged.*
+   . Adapted to DC06
+  
+!========================== DaVinciUser v5r2 2004-11-12 ===================
+! 2004-11-08 - P. Koppenburg
+ - UserAlgorithm.cpp
+   . Small changes.
+! 2004-11-04 - P. Koppenburg
+ - src/UserAlgorithm.cpp
+   . Adapt to GaudiAlgorithm. But not yet to GaudiTupleAlg...
+! 2004-11-04 - P. Koppenburg
+ - */LoopOnCharged.*
+   . Rename to LoopOnParticles.*
+   . Adapt names accordingly
+ - src/LoopOnParticles.{h,cpp}
+   . Adapt to use the new features of DVAlgorithm inherited from
+     GaudiAlgorithm and GaudiTupleAlg.
+   
+!========================== DaVinciUser v5r1p2 2004-09-16 ===================
+! 2004-09-03 - P. Koppenburg
+ - src/<someAlgorithms>.cpp
+   . Remove getInput that is not in physdesktop anymore.
+!========================== DaVinciUser v5r1p1 2004-08-03 ===================
+! 2004-07-28 - P. Koppenburg
+ - cmt/requirements
+   . remove useless and obolete HltEvent
+   
+! 2004-07-27 - P. Koppenburg
+ - options/UserAlgorithm.opts
+   . Correct location of J/psi selection.
+   
+! 2004-07-23 - P. Koppenburg
+ - cmt/requirements
+   . L1Event -> TrgEvent
+   . Import AIDA
+!========================= DaVinciUser v5r1 2004-06-02 =======================
+! 2004-05-12 - P. Koppenburg
+ - options/DVUserAlgorithm.opts
+ - options/UserAlgorithm.opts 
+   . added
+ - src/UserAlgorithm.cpp
+ - src/UserAlgorithm.h
+   . Updated UserAlgorithm. The code has been adapted to use the physDesktop
+     and to inherit from DVAlgorithm. The option files now reconstruct
+     the decay B-> J/psi(mumu)Ks using the default Ks and J/psi preselections. 
+     The B0 is reconstructed using PhysSelections/Select2ParticleDecay.
+ 
+     type 
+       DaVinci options/DVUserAlgorithm.opts
+     and have a look at the ntuple
+
+!========================= DaVinciUser v5r0 2004-04-08 =======================
+! 2004-04-08 - P. Koppenburg
+ Added a LoopOnCharged algorithms that does nothing more than that!
+ 
+ type 
+    DaVinci options/DVLoopOnParticles.opts
+ and see it loop.
+
+!========================= DaVinciUser v4r2 2003-12-12 =======================
+! 2003-12-12 - Gloria CORTI
+ - requirements
+   . replace EventSys v* with list of Event v* packages
+
+!========================= DaVinciUser v4r1p1 2003-08-06 =====================
+! 2003-07-24 - Gloria CORTI
+ - src/UserAlgorithm.cpp
+   . remove initialization of iterator = 0 to please gcc32
+
+!========================= DaVinciUser v4r1 2003-04-27 =======================
+! 2003-04-27 - Gloria Corti
+ - cmt/requirements
+   . use v* for DaVinciTools and DaVinciMCTools
+   . introduce use EventSys v* to give access to all data on OODST
+   . increase version number to v4r1
+
+!========================= DaVinciUser v4r0 2002-11-13 =======================
+! 2002-11-13 - Gloria Corti
+ - Use new major versions of DaVinciTools (v7r*) and DaVinciMCTools (v4r*)
+
+!========================= DaVinciUser v3r0 2002-10-30 =======================
+! 2002-09-11 - Gloria Corti
+ - Use DaVinciTools v6r* and DaVinciMCTools v3r* and increase version number
+
+!========================= DaVinciUser v2r0 2002-07-29 =======================
+! 2002-07-18 - Gloria Corti
+ - Use DaVinciTools v5r* and DaVinciMCTools v2r*
+
+!========================= DaVinciUser v1r0 2002-05-23 =======================
+! 2002-05-23 - Gloria Corti
+ - New package for user to hold private algorithms. An example of
+   User Algorithm is provided. 
+
